@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+}
+
+/* NOTE:-  All the propery of grid applied here were its default values !!! */
+
+.container {
+  border: 6px solid black;
+  display: grid;
+
+  /* 
+    display: grid
+
+    it initially work as block 
+      We can do inline-grid
+  */
+
+  grid-template-columns: auto;
+  /* 
+    grid-template-columns: auto ;
+
+    We can define how many columns we want and of what size
+
+    grid-template-columns: 200px 200px;
+    grid-template-columns: 1fr 1fr;   - this one use fractions of the avaliable spaces
+
+    + repeat(size,count);
+      - this function is used to do repetative task 
+      - Ex : insteade of 
+              grid-template-columns: 200px 200px 200px 200px 200px 200px;
+             We can do 
+              grid-template-columns: repeat(200px,6);
+      - both will have the same results
+      
+    + minmax(minValue,maxValue);
+      - This is used to let comumns grow to an certain amount (defined in function)
+      - Ex : grid-template-columns: 200px minmax(200px,1fr);
+          Or : grid-template-columns: 200px minmax(200px,300px);
+  */
+
+  grid-template-rows: auto;
+  /* 
+    grid-template-rows: auto;
+
+    We are setting height of the row 
+
+    All other things are same as grid-template-columns
+
+    Note: - for (fr) unit to work we need ot set height
+  */
+
+  grid-template: auto / auto;
+  /*  
+    grid-template: row / column;
+
+    This is an short hand so we can define row and column in one
+  */
+
+  column-gap: 0;
+  row-gap: 0;
+  /* 
+    column-gap: val;
+    row-gap: val;
+
+    used to set row and column gaps
+  */
+
+  gap: 0 0; /* this can also be written as gap: 0; as both values were same */
+  /* 
+    gap: row column;
+
+    This is an short hand property so we can apply both gap at once 
+  
+  */
+
+  /* Align item within the cell --------------------------------- */
+
+  justify-items: stretch;
+  /* 
+    justify-items: placement of cell content;
+
+    - This property is used to set the position of the items within the cells
+    - This are set along the column axis (Horenzontal)
+  */
+
+  align-items: stretch;
+  /* 
+    align-items: placement of cell content;
+
+    - This property is used to set the position of the items within the cells
+    - This are set along the row axis (vertically)
+  */
+
+  place-items: stretch stretch; /* this can also be written as place-items: stretch; as both values were same */
+  /*
+    place-items: align justify;
+
+    - This is an shorthand 
+  */
+
+  /* Align item within the container (Parent)  ------------------ */
+
+  justify-content: stretch;
+  /* 
+    justify-content: placement of cells;
+  
+    - This property is used to set the position cells with respect to parent
+    - This are set along the column axis (Horenzontal) 
+  */
+
+  align-content: stretch;
+  /* 
+    align-content: placement of cells ;
+  
+    - This property is used to set the position cells with respect to parent
+    - This are set along the row axis (vertically)
+  */
+
+  place-content: stretch stretch; /* this can also be written as place-content: stretch; as both values were same */
+  /*
+    place-content: align justify;
+  
+    - This is an shorthand 
+  */
+
+  grid-auto-flow: row;
+  /* 
+    grid-auto-flow: row / column etc;
+
+    - This is used to modify where the overflown cells were being set
+  */
+
+  grid-auto-columns: auto ;
+  /* 
+    grid-auto-columns: val;
+
+    - The width of rows
+    - It has low specificity so if we have set the grid-template-columns then this propery will be over written 
+  */
+
+  grid-auto-rows: auto ;
+  /* 
+    grid-auto-rows: val;
+
+    - The height of rows
+    - It has low specificity so if we have set the grid-template-rows then this propery will be over written 
+  */
+
+
+  
+}
+
+.grid-item {
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.item-1 {
+  background-color: #b4bf35;
+}
+.item-2 {
+  background-color: #b95f21;
+}
+.item-3 {
+  background-color: #1c4c56;
+}
+.item-4 {
+  background-color: #cfb276;
+}
+.item-5 {
+  background-color: #6b0803;
+}
+.item-6 {
+  background-color: #1c4c56;
+}
+.item-7 {
+  background-color: #b95f21;
+}
+.item-8 {
+  background-color: #901243;
+}
+.item-9 {
+  background-color: #8bab37;
+}
